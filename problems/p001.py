@@ -3,25 +3,32 @@
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
+
+Answer: 233168
+
+@author: tlane
 '''
+import numpy as np
 
+#Generate a multiplication array
+mult = np.array(range(1,350))
 
-def find_multiples_sum(a):
-    
-    # list all natural numbers below 10 that are multiples of 3 or 5
-    mynums = list(range(1,(a),1))
-    summultiples = 0
-    
-    for n in mynums:
-        if n % 3 == 0:
-            summultiples += n
+#Generate arrays of multiples of 3's and 5's
+threes = 3 * mult
+fives = 5 * mult
 
-        elif n % 5 ==0:
-            summultiples += n
+#Make list of multiples that are below 1000
+nums = list()
 
-    print (summultiples)
-    
-    # sum the above multiples
+for num in threes:
+    if num < 1000:
+        nums.append(num)
 
-    
-find_multiples_sum(1000)
+for num in fives:
+    if num < 1000:
+        nums.append(num)
+
+#Sum all multiples less than 1000
+nums = list(set(nums)) #removes duplicates
+total = sum(nums)
+print(total)
