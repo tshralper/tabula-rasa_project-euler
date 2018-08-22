@@ -6,7 +6,7 @@ What is the smallest positive number that is evenly divisible by all
 of the numbers from 1 to 20?
 
 Answer: 232792560
-Program completes in less than 10 seconds, but could be sped up by multiplying all factors of numbers in the range.
+Program completes in less than 10 seconds. Could it be sped up?
 
 @author: tlane
 '''
